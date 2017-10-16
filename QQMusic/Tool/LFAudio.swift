@@ -4,17 +4,27 @@
 //
 //  Created by 刘丰 on 2017/10/14.
 //  Copyright © 2017年 liufeng. All rights reserved.
-//
+//  播放音频的工具（本地音频）
 
 import UIKit
 import AVFoundation
 
+@objcMembers
 class LFAudio: NSObject {
     
     public static let shareAudio = LFAudio()
     
-    public var playFilure: ((_ errorReason: String) -> ())?
+    /// 播放结束的回调（注意解决循环引用问题，[weak self]）
     public var playCompletion: ((_ url: URL) -> ())?
+    
+    /// 播放失败的回调（注意解决循环引用问题，[weak self]）
+    public var playFilure: ((_ errorReason: String) -> ())?
+    
+    public var volume: Float = 1 {
+        didSet {
+            self.audioPlayer?.volume = self.volume
+        }
+    }
     
     public var currentTime: TimeInterval {
         return self.audioPlayer?.currentTime ?? 0
@@ -32,6 +42,8 @@ class LFAudio: NSObject {
     
     private override init() {
         super.init()
+        
+        self.playInBack()
     }
 }
 
@@ -51,13 +63,14 @@ extension LFAudio {
         }
         
         if self.audioPlayer?.url == pathUrl {
-            self.audioPlayer?.play()
+            self.resume()
             return
         }
         
         do {
             self.audioPlayer = try AVAudioPlayer(contentsOf: pathUrl)
             self.audioPlayer!.delegate = self
+            self.audioPlayer!.volume = self.volume
             self.audioPlayer!.prepareToPlay()
             self.audioPlayer!.play()
         }catch {
@@ -66,9 +79,45 @@ extension LFAudio {
         }
     }
     
+    /// 播放当前
+    public func resume() {
+        if !self.isPlaying {
+            self.audioPlayer?.play()
+        }
+    }
+    
     /// 暂停播放音频
     public func pause() {
-        self.audioPlayer?.pause()
+        if self.isPlaying {
+            self.audioPlayer?.pause()
+        }
+    }
+    
+    /// 结束播放
+    public func stop() {
+        self.audioPlayer?.currentTime = 0
+        self.audioPlayer?.stop()
+    }
+
+    /// 播放指定位置
+    ///
+    /// - Parameter time: 时间点
+    public func seek(toTime time: TimeInterval) {
+        self.audioPlayer?.currentTime = time
+    }
+    
+    /// 前进几秒
+    ///
+    /// - Parameter time: 秒数
+    public func forward(with second: TimeInterval){
+        self.audioPlayer?.currentTime += second
+    }
+    
+    /// 后退几秒
+    ///
+    /// - Parameter second: 秒数
+    public func backward(with second: TimeInterval){
+        self.audioPlayer?.currentTime -= second
     }
 }
 
@@ -109,8 +158,12 @@ extension LFAudio {
     
     fileprivate func playInBack() {
         let audioSession = AVAudioSession.sharedInstance()
-        try? audioSession.setCategory(AVAudioSessionCategoryPlayback)
-        try? audioSession.setActive(true)
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+            try audioSession.setActive(true)
+        }catch {
+            
+        }
     }
 }
 

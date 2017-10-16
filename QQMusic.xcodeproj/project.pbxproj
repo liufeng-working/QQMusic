@@ -62,6 +62,13 @@
 		0354811D1F926D9F0022384F /* LFMusicTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354811C1F926D9F0022384F /* LFMusicTool.swift */; };
 		0354811F1F9270910022384F /* LFNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354811E1F9270910022384F /* LFNavigationController.swift */; };
 		03B45C971F9332440045F8B5 /* LFDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B45C961F9332440045F8B5 /* LFDetailModel.swift */; };
+		03C7C1FD1F93903000AFA3F5 /* LFLrcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C7C1FB1F93903000AFA3F5 /* LFLrcCell.swift */; };
+		03C7C1FE1F93903000AFA3F5 /* LFLrcCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C7C1FC1F93903000AFA3F5 /* LFLrcCell.xib */; };
+		03DAC3D41F934DDF00627369 /* Date+LFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAC3D31F9347C500627369 /* Date+LFExtension.swift */; };
+		03DAC3D61F935A8400627369 /* CALayer+LFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAC3D51F935A8400627369 /* CALayer+LFExtension.swift */; };
+		03DAC3D81F9366D600627369 /* LFLrcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAC3D71F9366D600627369 /* LFLrcModel.swift */; };
+		03DAC3DB1F937F2E00627369 /* LFLrcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAC3DA1F937F2E00627369 /* LFLrcViewController.swift */; };
+		03DAC3DD1F938B3900627369 /* LFProgressLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAC3DC1F938B3900627369 /* LFProgressLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +129,13 @@
 		0354811C1F926D9F0022384F /* LFMusicTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFMusicTool.swift; sourceTree = "<group>"; };
 		0354811E1F9270910022384F /* LFNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFNavigationController.swift; sourceTree = "<group>"; };
 		03B45C961F9332440045F8B5 /* LFDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFDetailModel.swift; sourceTree = "<group>"; };
+		03C7C1FB1F93903000AFA3F5 /* LFLrcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFLrcCell.swift; sourceTree = "<group>"; };
+		03C7C1FC1F93903000AFA3F5 /* LFLrcCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LFLrcCell.xib; sourceTree = "<group>"; };
+		03DAC3D31F9347C500627369 /* Date+LFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+LFExtension.swift"; sourceTree = "<group>"; };
+		03DAC3D51F935A8400627369 /* CALayer+LFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+LFExtension.swift"; sourceTree = "<group>"; };
+		03DAC3D71F9366D600627369 /* LFLrcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFLrcModel.swift; sourceTree = "<group>"; };
+		03DAC3DA1F937F2E00627369 /* LFLrcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFLrcViewController.swift; sourceTree = "<group>"; };
+		03DAC3DC1F938B3900627369 /* LFProgressLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFProgressLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +174,7 @@
 				0354803C1F9242310022384F /* Base */,
 				035480471F92423F0022384F /* Const */,
 				035480461F92423E0022384F /* Tool */,
+				03B45C981F9342860045F8B5 /* Category */,
 				035480501F9247100022384F /* Musics */,
 				035480491F92427A0022384F /* Supporting Files */,
 			);
@@ -181,7 +196,7 @@
 			children = (
 				035480351F9242250022384F /* Controller */,
 				035480361F9242250022384F /* Model */,
-				035480371F9242250022384F /* View */,
+				03DAC3D91F9366F300627369 /* View */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -190,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				0354804E1F9246580022384F /* LFDetailViewController.swift */,
+				03DAC3DA1F937F2E00627369 /* LFLrcViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,15 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				03B45C961F9332440045F8B5 /* LFDetailModel.swift */,
+				03DAC3D71F9366D600627369 /* LFLrcModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		035480371F9242250022384F /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		035480381F9242250022384F /* List */ = {
@@ -255,7 +265,6 @@
 		035480461F92423E0022384F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				03B45C981F9342860045F8B5 /* Category */,
 				0354807F1F9249A00022384F /* LFDataTool.swift */,
 				0354811C1F926D9F0022384F /* LFMusicTool.swift */,
 				0354811A1F925FF70022384F /* LFAudio.swift */,
@@ -354,10 +363,22 @@
 		03B45C981F9342860045F8B5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				03DAC3D31F9347C500627369 /* Date+LFExtension.swift */,
+				03DAC3D51F935A8400627369 /* CALayer+LFExtension.swift */,
 			);
 			name = Category;
 			path = QQMusic/Category;
 			sourceTree = SOURCE_ROOT;
+		};
+		03DAC3D91F9366F300627369 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03DAC3DC1F938B3900627369 /* LFProgressLabel.swift */,
+				03C7C1FB1F93903000AFA3F5 /* LFLrcCell.swift */,
+				03C7C1FC1F93903000AFA3F5 /* LFLrcCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -393,6 +414,11 @@
 					0354801D1F9241750022384F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -442,6 +468,7 @@
 				035480FA1F92545C0022384F /* 1201111234.mp3 in Resources */,
 				035480F61F9254330022384F /* 月半小夜曲.lrc in Resources */,
 				035480851F9253EA0022384F /* musics.plist in Resources */,
+				03C7C1FE1F93903000AFA3F5 /* LFLrcCell.xib in Resources */,
 				035481151F9254A40022384F /* zxy_icon@2x.jpg in Resources */,
 				035480F31F92542B0022384F /* 235319.lrc in Resources */,
 				035480F21F9254280022384F /* 14945107.lrc in Resources */,
@@ -478,12 +505,18 @@
 				035480831F924D640022384F /* LFListCell.swift in Sources */,
 				0354807E1F9247BC0022384F /* LFMusicModel.swift in Sources */,
 				035480801F9249A00022384F /* LFDataTool.swift in Sources */,
+				03DAC3DB1F937F2E00627369 /* LFLrcViewController.swift in Sources */,
+				03DAC3D41F934DDF00627369 /* Date+LFExtension.swift in Sources */,
 				0354804F1F9246580022384F /* LFDetailViewController.swift in Sources */,
 				0354811D1F926D9F0022384F /* LFMusicTool.swift in Sources */,
 				03B45C971F9332440045F8B5 /* LFDetailModel.swift in Sources */,
 				0354811B1F925FF70022384F /* LFAudio.swift in Sources */,
 				035480221F9241750022384F /* AppDelegate.swift in Sources */,
 				0354811F1F9270910022384F /* LFNavigationController.swift in Sources */,
+				03DAC3DD1F938B3900627369 /* LFProgressLabel.swift in Sources */,
+				03C7C1FD1F93903000AFA3F5 /* LFLrcCell.swift in Sources */,
+				03DAC3D61F935A8400627369 /* CALayer+LFExtension.swift in Sources */,
+				03DAC3D81F9366D600627369 /* LFLrcModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +646,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QDT8L8LPPU;
+				DEVELOPMENT_TEAM = JZ8BCQ3SD3;
 				INFOPLIST_FILE = "$(SRCROOT)/QQMusic/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -629,7 +662,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QDT8L8LPPU;
+				DEVELOPMENT_TEAM = JZ8BCQ3SD3;
 				INFOPLIST_FILE = "$(SRCROOT)/QQMusic/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
